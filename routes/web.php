@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::namespace('Auth')->group(function () {
+    Route::get('/', ['as' => 'login', 'uses' => 'LoginController@index']);
 });
