@@ -61,7 +61,8 @@
        {{ env('APP_NAME') }}
       </div>
     </h2>
-    <form class="ui large form">
+    <form class="ui large form" method="POST">
+      {{ csrf_field() }}
       <div class="ui stacked segment">
         <div class="field">
           <div class="ui left icon input">
@@ -78,7 +79,9 @@
         <div class="ui fluid large teal submit button">Connexion</div>
       </div>
 
-      <div class="ui error message"></div>
+      <div class="ui error message">
+
+      </div>
 
     </form>
 

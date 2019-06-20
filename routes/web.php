@@ -11,6 +11,10 @@
 |
 */
 
-Route::namespace('Auth')->group(function () {
+Route::namespace('Auth')->group(function () 
+{
     Route::get('/', ['as' => 'login', 'uses' => 'LoginController@index']);
+    Route::post('/', ['as' => 'login-submit', 'uses' => 'LoginController@authenticate']);
+    Route::get('logout', ['as' => 'logout', 'uses' => 'LoginController@logout']);
 });
+
