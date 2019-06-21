@@ -30,6 +30,7 @@
         "webpack": "^4.34.0"
     },
     "dependencies": {
-        "semantic-ui-icon": "^2.3.3"
+        "semantic-ui-icon": "^2.3.3",
+        "swup": "^2.0.4"
     }
 }

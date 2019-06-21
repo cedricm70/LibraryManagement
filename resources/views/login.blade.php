@@ -1,8 +1,8 @@
 <html>
 <head>
+    <meta charset="utf-8" />
+    <title>{{ env('APP_NAME') }}</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/semantic.min.js') }}"></script>
     <style type="text/css">
     body {
       background-color: #DADADA;
@@ -17,40 +17,6 @@
       max-width: 450px;
     }
   </style>
-  <script>
-  $(document)
-    .ready(function() {
-      $('.ui.form')
-        .form({
-          fields: {
-            email: {
-              identifier  : 'email',
-              rules: [
-                {
-                  type   : 'empty',
-                  prompt : 'Merci de renseigner votre e-mail'
-                },
-                {
-                  type   : 'email',
-                  prompt : 'Merci d\'entrer une adresse e-mail valide'
-                }
-              ]
-            },
-            password: {
-              identifier  : 'password',
-              rules: [
-                {
-                  type   : 'empty',
-                  prompt : 'Merci de renseigner votre mot de passe'
-                }
-              ]
-            }
-          }
-        })
-      ;
-    })
-  ;
-  </script>
 </head>
 <body>
 <div class="ui middle aligned center aligned grid">
@@ -87,5 +53,41 @@
 
   </div>
 </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="{{ asset('js/semantic.min.js') }}"></script>
+  <script>
+  $(document)
+    .ready(function() {
+      $('.ui.form')
+        .form({
+          fields: {
+            email: {
+              identifier  : 'email',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Merci de renseigner votre e-mail'
+                },
+                {
+                  type   : 'email',
+                  prompt : 'Merci d\'entrer une adresse e-mail valide'
+                }
+              ]
+            },
+            password: {
+              identifier  : 'password',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Merci de renseigner votre mot de passe'
+                }
+              ]
+            }
+          }
+        })
+      ;
+    })
+  ;
+  </script>
 </body>
 </html>

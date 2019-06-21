@@ -7,9 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
-  <script src="{{ asset('js/app.js') }}"></script>
-  <script src="{{ asset('js/semantic.min.js') }}"></script>
-
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
   <style type="text/css">
   body {
     background-color: #FFFFFF;
@@ -34,10 +32,10 @@
 
   <div class="ui fixed inverted menu">
     <div class="ui container">
-      <a href="#" class="header item">
+      <a href="{{ route('dashboard') }}" class="header item">
         {{ env('APP_NAME') }}
       </a>
-      <a href="#" class="item">Accueil</a>
+      <a href="{{ route('dashboard') }}" class="item">Accueil</a>
       <div class="ui simple dropdown item">
         Gestion <i class="dropdown icon"></i>
         <div class="menu">
@@ -60,7 +58,7 @@
     </div>
   </div>
 
-  <div class="ui main container">
+  <div class="ui main container transition-fade" id="swup">
     @yield('content')
   </div>
 
@@ -71,6 +69,8 @@
       </div>
     </div>
   </div>
+  <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('js/semantic.min.js') }}"></script>
 </body>
 
 </html>
