@@ -30,6 +30,7 @@
         "webpack": "^4.34.0"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.9.0",
         "semantic-ui-icon": "^2.3.3",
         "swup": "^2.0.4"
     }
