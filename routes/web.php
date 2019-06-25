@@ -15,6 +15,9 @@ Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'HomeController@index'])
 Route::get('stock', ['as' => 'stock', 'uses' => 'StockController@index'])->middleware('auth');
 Route::get('author', ['as' => 'author', 'uses' => 'AuthorController@index'])->middleware('auth');
 Route::get('author/create', ['as' => 'author.create', 'uses' => 'AuthorController@create'])->middleware('auth');
+Route::post('author/create', ['as' => 'author.store', 'uses' => 'AuthorController@store'])->middleware('auth');
+Route::get('author/show/{id}', ['as' => 'author.show', 'uses' => 'AuthorController@show'])->middleware('auth');
+Route::get('author/destroy/{id}', ['as' => 'author.destroy', 'uses' => 'AuthorController@destroy'])->middleware('auth');
 Route::get('/', ['as' => 'login', 'uses' => 'Auth\LoginController@index']);
 Route::post('/', ['as' => 'login-submit', 'uses' => 'Auth\LoginController@authenticate']);
 Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);

@@ -10,7 +10,7 @@ class Author extends Model
     protected $primaryKey = 'AuteurId';
     public $timestamps = false;
 
-    protected $attributes = [
+    protected $fillable = [
         'AuteurNom', 'AuteurPrenom', 'AuteurPseudo', 'AuteurDateNaiss', 'AuteurDeces', 'AuteurPays', 'AuteurBiographie'
     ];
 }

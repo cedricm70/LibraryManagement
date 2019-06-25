@@ -25,12 +25,16 @@
         <td>{{ $item->AuteurPrenom }}</td>
         <td>{{ $item->AuteurPseudo }}</td>
         <td class="right aligned" style="max-width: 10rem"> 
+          <a href="{{ route('author.show', $item->AuteurId) }}">
           <button class="ui primary basic button">
             En savoir plus
           </button>
-          <button class="ui negative basic button">
-            Supprimer
-          </button>
+          </a>
+          <a href="{{ route('author.destroy', $item->AuteurId) }}">
+            <button class="ui negative basic button">
+              Supprimer
+            </button>
+          </a>
         </td>
       </tr>
       @endforeach

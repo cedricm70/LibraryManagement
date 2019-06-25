@@ -36,7 +36,15 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $author = new Author;
+        $author->AuteurNom = $request->lastname;
+        $author->AuteurPrenom = $request->firstname;
+        $author->AuteurPseudo = $request->username;
+        $author->AuteurDateNaiss = $request->birth;
+        $author->AuteurDeces = $request->death;
+        $author->AuteurPays = $request->country;
+        $author->AuteurBiographie = $request->biography;
+        $author->save();
     }
 
     /**
@@ -47,32 +55,10 @@ class AuthorController extends Controller
      */
     public function show($id)
     {
-        //
+        $author = Author::findOrFail($id);
+        return view('author.show')->with('author', $author);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -81,6 +67,7 @@ class AuthorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Author::destroy($id);
+        return redirect()->route('author');
     }
 }
