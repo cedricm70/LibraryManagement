@@ -24,7 +24,12 @@
         <td>{{ $item->AuteurNom }}</td>
         <td>{{ $item->AuteurPrenom }}</td>
         <td>{{ $item->AuteurPseudo }}</td>
-        <td class="right aligned" style="max-width: 10rem"> 
+        <td class="right aligned" style="max-width: 11rem"> 
+          <a href="{{ route('author.edit', $item->AuteurId) }}">
+          <button class="ui orange basic button">
+            Éditer
+          </button>
+          </a>          
           <a href="{{ route('author.show', $item->AuteurId) }}">
           <button class="ui primary basic button">
             En savoir plus

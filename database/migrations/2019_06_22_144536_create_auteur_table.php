@@ -21,7 +21,7 @@ class CreateAuteurTable extends Migration
             $table->date("AuteurDateNaiss")->nullable();
             $table->date("AuteurDeces")->nullable();
             $table->string("AuteurPays", 30);
-            $table->string("AuteurBiographie", 2000);
+            $table->string("AuteurBiographie", 2000)->nullable();
         });
     }
 

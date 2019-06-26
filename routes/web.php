@@ -16,6 +16,8 @@ Route::get('stock', ['as' => 'stock', 'uses' => 'StockController@index'])->middl
 Route::get('author', ['as' => 'author', 'uses' => 'AuthorController@index'])->middleware('auth');
 Route::get('author/create', ['as' => 'author.create', 'uses' => 'AuthorController@create'])->middleware('auth');
 Route::post('author/create', ['as' => 'author.store', 'uses' => 'AuthorController@store'])->middleware('auth');
+Route::get('author/edit/{id}', ['as' => 'author.edit', 'uses' => 'AuthorController@edit'])->middleware('auth');
+Route::post('author/edit/{id}', ['as' => 'author.edit', 'uses' => 'AuthorController@update'])->middleware('auth');
 Route::get('author/show/{id}', ['as' => 'author.show', 'uses' => 'AuthorController@show'])->middleware('auth');
 Route::get('author/destroy/{id}', ['as' => 'author.destroy', 'uses' => 'AuthorController@destroy'])->middleware('auth');
 Route::get('/', ['as' => 'login', 'uses' => 'Auth\LoginController@index']);

@@ -58,7 +58,39 @@ class AuthorController extends Controller
         $author = Author::findOrFail($id);
         return view('author.show')->with('author', $author);
     }
-    
+
+     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $author = Author::findOrFail($id);
+        return view('author.edit')->with('author', $author);
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $author = Author::findOrFail($id);
+        $author->AuteurNom = $request->lastname;
+        $author->AuteurPrenom = $request->firstname;
+        $author->AuteurPseudo = $request->username;
+        $author->AuteurDateNaiss = $request->birth;
+        $author->AuteurDeces = $request->death;
+        $author->AuteurPays = $request->country;
+        $author->AuteurBiographie = $request->biography;
+        $author->save();
+        return redirect()->route('author');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
