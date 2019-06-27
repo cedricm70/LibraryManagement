@@ -11,3 +11,7 @@ html.is-animating .transition-fade {
   opacity: 0;
 }
 
+.text-red {
+  color: #B62000;
+}
+

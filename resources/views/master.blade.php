@@ -42,6 +42,7 @@
         <div class="header">Livres</div>
           <a class="item" href="{{ route('stock') }}">Stock</a>
           <a class="item" href="{{ route('author') }}">Auteur</a>
+          <a class="item" href="{{ route('editor') }}">Éditeur</a>
           <!-- <a class="item" href="#">Recherche</a> -->
           <div class="divider"></div>
           <a class="item">Client</a>

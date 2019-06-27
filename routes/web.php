@@ -20,6 +20,13 @@ Route::get('author/edit/{id}', ['as' => 'author.edit', 'uses' => 'AuthorControll
 Route::post('author/edit/{id}', ['as' => 'author.edit', 'uses' => 'AuthorController@update'])->middleware('auth');
 Route::get('author/show/{id}', ['as' => 'author.show', 'uses' => 'AuthorController@show'])->middleware('auth');
 Route::get('author/destroy/{id}', ['as' => 'author.destroy', 'uses' => 'AuthorController@destroy'])->middleware('auth');
+Route::get('editor', ['as' => 'editor', 'uses' => 'EditorController@index'])->middleware('auth');
+Route::get('editor/create', ['as' => 'editor.create', 'uses' => 'EditorController@create'])->middleware('auth');
+Route::post('editor/create', ['as' => 'editor.store', 'uses' => 'EditorController@store'])->middleware('auth');
+Route::get('editor/edit/{id}', ['as' => 'editor.edit', 'uses' => 'EditorController@edit'])->middleware('auth');
+Route::post('editor/edit/{id}', ['as' => 'editor.edit', 'uses' => 'EditorController@update'])->middleware('auth');
+Route::get('editor/show/{id}', ['as' => 'editor.show', 'uses' => 'EditorController@show'])->middleware('auth');
+Route::get('editor/destroy/{id}', ['as' => 'editor.destroy', 'uses' => 'EditorController@destroy'])->middleware('auth');
 Route::get('/', ['as' => 'login', 'uses' => 'Auth\LoginController@index']);
 Route::post('/', ['as' => 'login-submit', 'uses' => 'Auth\LoginController@authenticate']);
 Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);

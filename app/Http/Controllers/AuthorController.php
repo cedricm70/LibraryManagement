@@ -45,6 +45,7 @@ class AuthorController extends Controller
         $author->AuteurPays = $request->country;
         $author->AuteurBiographie = $request->biography;
         $author->save();
+        return redirect()->route('author');
     }
 
     /**

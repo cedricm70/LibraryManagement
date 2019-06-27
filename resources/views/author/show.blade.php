@@ -7,15 +7,15 @@
     <div class="ui list">
         <div class="item">
             <div class="header">Nom</div>
-            A lovely city
-        </div>
-        <div class="item">
-            <div class="header">Prénom</div>
             {{ $author->AuteurNom }}
         </div>
         <div class="item">
-            <div class="header">Pseudo</div>
+            <div class="header">Prénom</div>
             {{ $author->AuteurPrenom }}
+        </div>
+        <div class="item">
+            <div class="header">Pseudo</div>
+            {{ $author->AuteurPseudo }}
         </div>
         <div class="item">
             <div class="header">Date de naissance</div>
