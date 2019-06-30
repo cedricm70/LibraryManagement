@@ -12,7 +12,13 @@
 */
 
 Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'HomeController@index'])->middleware('auth');
-Route::get('stock', ['as' => 'stock', 'uses' => 'StockController@index'])->middleware('auth');
+Route::get('comic', ['as' => 'comic', 'uses' => 'ComicController@index'])->middleware('auth');
+Route::get('comic/create', ['as' => 'comic.create', 'uses' => 'ComicController@create'])->middleware('auth');
+Route::post('comic/create', ['as' => 'comic.store', 'uses' => 'ComicController@store'])->middleware('auth');
+Route::get('comic/edit/{id}', ['as' => 'comic.edit', 'uses' => 'ComicController@edit'])->middleware('auth');
+Route::post('comic/edit/{id}', ['as' => 'comic.edit', 'uses' => 'ComicController@update'])->middleware('auth');
+Route::get('comic/show/{id}', ['as' => 'comic.show', 'uses' => 'ComicController@show'])->middleware('auth');
+Route::get('comic/destroy/{id}', ['as' => 'comic.destroy', 'uses' => 'ComicController@destroy'])->middleware('auth');
 Route::get('author', ['as' => 'author', 'uses' => 'AuthorController@index'])->middleware('auth');
 Route::get('author/create', ['as' => 'author.create', 'uses' => 'AuthorController@create'])->middleware('auth');
 Route::post('author/create', ['as' => 'author.store', 'uses' => 'AuthorController@store'])->middleware('auth');
