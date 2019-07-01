@@ -31,7 +31,7 @@
             </div>
             <div class="field">
                 <label>Couleur</label>
-                <select class="ui dropdown">
+                <select class="ui dropdown" name="color">
                     <option value="Couleur">Couleur</option>
                     <option value="Noir et Blanc">Noir et Blanc</option>
                     <option value="Quadrichromie">Quadrichromie</option>
@@ -51,11 +51,37 @@
                 <label>Série</label>
             </div>
         </div>
-        <div class="field">
-            <label>Éditeur</label>
-            <input type="text" name="editor">
+        <div class="ui field">
+            <div class="ui search">
+                <label>Éditeur</label>
+                <input type="text" name="editor" class="prompt" value="">
+            </div>
         </div>
     <button class="positive ui button">Ajouter le livre</button>
     </form>
 </div>
+@endsection
+@section('javascript')
+<script>
+$('.ui.search')
+  .search({
+    minCharacters : 2,
+    searchFullText: false,
+    apiSettings: {
+            url: '{{ route('author.search') }}?param={query}',
+            onResponse: function(results) {
+                var response = {
+                    results : []
+                };
+                $.each(results, function(index, item) {
+                    console.log(item);
+                    response.results.push({
+                        title : item.AuteurNom + " " + item.AuteurPrenom,
+                    });
+                });
+                return response;
+            },
+        },
+  });
+</script>
 @endsection

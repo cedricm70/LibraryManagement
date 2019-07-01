@@ -73,6 +73,7 @@
   </div>
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="{{ asset('js/semantic.min.js') }}"></script>
+  @yield('javascript')
 </body>
 
 </html>
