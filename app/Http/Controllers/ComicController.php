@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Author;
 use App\Comic;
 
 class ComicController extends Controller
@@ -22,4 +23,13 @@ class ComicController extends Controller
     {
         return view('comic.create');
     }
+
+    public function search(Request $request)
+    {
+          $search = $request->get('term');
+      
+          $result = Author::where('AuteurNom', 'LIKE', '%'. $search. '%')->get();
+ 
+          return response()->json($result);  
+    } 
 }

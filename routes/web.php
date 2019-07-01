@@ -19,6 +19,7 @@ Route::get('comic/edit/{id}', ['as' => 'comic.edit', 'uses' => 'ComicController@
 Route::post('comic/edit/{id}', ['as' => 'comic.edit', 'uses' => 'ComicController@update'])->middleware('auth');
 Route::get('comic/show/{id}', ['as' => 'comic.show', 'uses' => 'ComicController@show'])->middleware('auth');
 Route::get('comic/destroy/{id}', ['as' => 'comic.destroy', 'uses' => 'ComicController@destroy'])->middleware('auth');
+Route::get('author/search', ['as' => 'author.search', 'uses' => 'ComicController@search'])->middleware('auth');
 Route::get('author', ['as' => 'author', 'uses' => 'AuthorController@index'])->middleware('auth');
 Route::get('author/create', ['as' => 'author.create', 'uses' => 'AuthorController@create'])->middleware('auth');
 Route::post('author/create', ['as' => 'author.store', 'uses' => 'AuthorController@store'])->middleware('auth');
